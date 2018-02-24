@@ -7,12 +7,26 @@ import React, { Component } from 'react';
 // };
 
 export default class SearchBar extends Component{
-    render(){  //every class based react component must have a defined render method
-        return <input onChange={this.onInputChange} />;
+
+    constructor(props){
+        super(props);
+        this.state = {term:'Search here'};
     }
+    render(){  //every class based react component must have a defined render method
+        return (
+            <div className="search-bar">
+            <input
+                value = {this.state.term}
+                onChange={event => {
+                    this.setState({term: event.target.value});
+                    this.props.onSearch(this.state.term);
+                }}/>
+            </div>
+            );
+    };
 
     //event handler
-    onInputChange(eventObject){ //eventObject describes the context and a lot of information about the event that occured.
-        console.log(eventObject.target.value)
-    }
+    // onInputChange(eventObject){ //eventObject describes the context and a lot of information about the event that occured.
+    //     console.log(eventObject.target.value)
+    // }
 }
