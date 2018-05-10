@@ -1,6 +1,7 @@
 # ReduxSimpleStarter
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This project is configured with Jenkins on Amazon AWS
 
 ### Getting Started
 
